@@ -1,0 +1,42 @@
+{
+    "ID00": {
+        "ID": "0",
+        "Class": "0",
+        "Arousal": "0",
+        "Valence": "0",
+        "Drowsiness": "2",
+        "Concentration": "0.3"
+    },
+    "ID01": {
+        "ID": "1",
+        "Class": "1",
+        "Arousal": "0.1",
+        "Valence": "-0.1",
+        "Drowsiness": "2.1",
+        "Concentration": "0.4"
+    },
+    "ID02": {
+        "ID": "2",
+        "Class": "2",
+        "Arousal": "0.2",
+        "Valence": "-0.2",
+        "Drowsiness": "2.2",
+        "Concentration": "0.5"
+    },
+    "ID03": {
+        "ID": "3",
+        "Class": "3",
+        "Arousal": "0.3",
+        "Valence": "-0.3",
+        "Drowsiness": "2.3",
+        "Concentration": "0.6"
+    },
+    "ID04": {
+        "ID": "4",
+        "Class": "4",
+        "Arousal": "0.4",
+        "Valence": "-0.4",
+        "Drowsiness": "2.4",
+        "Concentration": "0.7"
+    }
+}
