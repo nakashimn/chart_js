@@ -9,7 +9,21 @@ for(var i=0;i<5;i++){
 var x_label = new Array(120)
 var data_label = "HeartRate[BPM]"
 var data = new Array(120)
-var dataset = {label: data_label, data: data}
+var randata = new Array(120)
+for(var i=0;i<120;i++){
+  data[i] = Math.random()+1.5
+  randata[i] = Math.random()+1.5
+}
+var dataset = [{label: data_label, data: data,
+               backgroundColor:'rgba(220, 20, 60, 0)',
+               borderColor:'rgba(220, 20, 60, 0.5)',
+               radius: 0,
+               hoverRadius: 4},
+               {label: data_label, data: randata,
+               backgroundColor:'rgba(34, 139, 34, 0)',
+               borderColor:'rgba(34, 139, 34, 0.5)',
+               radius: 0,
+               hoverRadius: 4}]
 
 x_label[0] = "0"
 x_label[59] = "1"
@@ -23,9 +37,10 @@ var updateValue = function(){
     dataType: 'json'
   })
   .done(function(json){
-    chart.data.datasets.forEach(
-      dataset => {dataset.data.shift()
-                  dataset.data.push(json.ID00.Drowsiness)}
+    chart.data.datasets.forEach(function(dataset){
+      dataset.data.shift()
+      dataset.data.push(json.ID00.Drowsiness)
+    }
   )
   })
   .fail(function(){
@@ -41,18 +56,16 @@ window.onload = function(){
       type: "line",
       data: {
         labels: x_label,
-        datasets: [dataset]
+        datasets: dataset
       },
       options: {
         scales: {
-          yAxes:[{
-            ticks: {
-              beginAtZero: false,
-              min: 0,
-              max: 5
+          yAxes : [{
+            ticks : {
+               min : 0, max : 5
             }
           }]
-        }
+        },
         animation: false
       }
     })
